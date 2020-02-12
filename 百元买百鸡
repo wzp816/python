@@ -1,0 +1,31 @@
+#百元买百鸡，公鸡3 母鸡5 小鸡0.7
+#g m x
+def maiji(gq = 2,mq = 3,xq = 0.6):
+    #计算出g m x最大数量
+    if (100 / gq > 100):
+        zg = 100
+    else:
+        zg = 100 / gq
+    if (100 / mq > 100):
+        zm = 100
+    else:
+        zm = 100 / mq
+    if (100 / xq > 100):
+        zx = 100
+    else:
+        zx = 100 / xq
+    g = 0
+    while g <= zg:
+        m = 0
+        while m <= zm:
+            x = 0
+            while x <= zx:
+                if (g + m + x == 100) and (g*gq+m*mq+x*xq == 100):
+                    print('公鸡',g,'母鸡',m,'小鸡',x)
+                x+=1
+            m+=1
+        g+=1
+    return 0
+
+result = maiji(2,3,0.75)
+print(result)
